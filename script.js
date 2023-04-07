@@ -40,6 +40,56 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+// Defining variables
+let playerScore = 0;
+let computerScore = 0;
+
+// Get the user input from buttons
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    let playerSelection = button.textContent;
+    computerSelection = getComputerChoice();
+
+    result = playRound(playerSelection, computerSelection);
+
+    const gameResults = document.getElementById("results");
+    gameResults.textContent = `${result}`;
+
+    const runningScore = document.getElementById("running-score");
+    result[4] == "W"
+      ? playerScore++
+      : result[4] == "L"
+      ? computerScore++
+      : null;
+    runningScore.textContent = `${playerScore} - ${computerScore}`;
+
+    const winner = document.getElementById("winner");
+
+    // After a winner is found, declare them and set the DOM back to default
+    if (playerScore == 5 || computerScore == 5) {
+      winner.textContent = "Winner";
+
+      playerScore = 0;
+      computerScore = 0;
+    } else {
+      winner.textContent = "";
+    }
+  });
+});
+
+/*
+// Plays 1 game of rock paper scissors
+function game() {
+  playerSelection = prompt("What is your selection?: ")
+  computerSelection = getComputerChoice()
+
+  result = playRound(playerSelection, computerSelection);
+  console.log(`${result}`);
+}
+*/
+
+/*
 // Plays 5 games of rock paper scissors
 function game() {
     let playerScore = 0;
@@ -62,6 +112,4 @@ function game() {
   
     console.log(resultString);
   }
-  
-
-game();
+*/
