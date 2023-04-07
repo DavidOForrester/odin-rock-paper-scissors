@@ -77,39 +77,3 @@ buttons.forEach((button) => {
     }
   });
 });
-
-/*
-// Plays 1 game of rock paper scissors
-function game() {
-  playerSelection = prompt("What is your selection?: ")
-  computerSelection = getComputerChoice()
-
-  result = playRound(playerSelection, computerSelection);
-  console.log(`${result}`);
-}
-*/
-
-/*
-// Plays 5 games of rock paper scissors
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-  
-    for (let i = 0; i < 5; i++) {
-      let result = "";
-      const [playerSelection, computerSelection] = [prompt("What is your selection?: "), getComputerChoice()];
-      result = playRound(playerSelection, computerSelection);
-      console.log(`${result}`);
-  
-      result[4] == "W" ? playerScore++ : result[4] == "L" ? computerScore++ : null;
-    }
-  
-    const resultString = playerScore > computerScore
-      ? `You win with a score of ${playerScore} to ${computerScore}`
-      : playerScore < computerScore
-      ? `You lose with a score of ${playerScore} to ${computerScore}`
-      : `You draw with a score of ${playerScore} to ${computerScore}`;
-  
-    console.log(resultString);
-  }
-*/
